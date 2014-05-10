@@ -1,0 +1,10 @@
+c:\users\hector09\documents\visual studio 2012\Projects\formSimulator\formSimulator\bin\Debug\formSimulator.exe.config
+c:\users\hector09\documents\visual studio 2012\Projects\formSimulator\formSimulator\obj\Debug\formSimulator.csprojResolveAssemblyReference.cache
+c:\users\hector09\documents\visual studio 2012\Projects\formSimulator\formSimulator\obj\Debug\formSimulator.Properties.Resources.resources
+c:\users\hector09\documents\visual studio 2012\Projects\formSimulator\formSimulator\obj\Debug\formSimulator.csproj.GenerateResource.Cache
+C:\Users\hector09\documents\visual studio 2012\Projects\formSimulator\formSimulator\obj\Debug\formSimulator.mainform.resources
+C:\Users\hector09\documents\visual studio 2012\Projects\formSimulator\formSimulator\bin\Debug\formSimulator.exe
+C:\Users\hector09\documents\visual studio 2012\Projects\formSimulator\formSimulator\bin\Debug\formSimulator.pdb
+C:\Users\hector09\documents\visual studio 2012\Projects\formSimulator\formSimulator\obj\Debug\formSimulator.exe
+C:\Users\hector09\documents\visual studio 2012\Projects\formSimulator\formSimulator\obj\Debug\formSimulator.pdb
+C:\Users\hector09\Documents\Visual Studio 2012\Projects\formSimulator\formSimulator\obj\Debug\formSimulator.Form2.resources

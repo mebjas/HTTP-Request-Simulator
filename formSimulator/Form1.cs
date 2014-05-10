@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace formSimulator
 {
@@ -16,6 +17,7 @@ namespace formSimulator
     {
         private string data;
         private bool isGet = true;
+        private string tempfile = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +@"/formsimulatortemp.txt";
         public mainform()
         {
             InitializeComponent();
@@ -139,6 +141,7 @@ namespace formSimulator
             query.Text = url.Text = inputName.Text = inputData.Text = "";
             logrtb.Text = response.Text = "";
             inputName.Select();
+            regexbox.Enabled = regexbutton.Enabled = false;
         }
 
         private void requester_DoWork(object sender, DoWorkEventArgs e)
@@ -164,6 +167,21 @@ namespace formSimulator
             pb.Value = 100;
             pb.Visible = false;
             pb.Value = 0;
+            regexbox.Enabled = true;
+            regexbutton.Enabled = true;
+        }
+
+        private void regexbutton_Click(object sender, EventArgs e)
+        {
+            string data = response.Text;
+            string regexcase = regexbox.Text;
+            File.WriteAllText(tempfile, "");
+            foreach (Match m in Regex.Matches(data, regexcase, RegexOptions.IgnoreCase | RegexOptions.Multiline))
+            {
+                File.AppendAllText(tempfile, m.Groups[0].Value.ToString() +Environment.NewLine);
+            }
+            Form2 obj = new Form2();
+            obj.Show();
         }
 
     }

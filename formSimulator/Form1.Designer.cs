@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainform));
             this.inputName = new System.Windows.Forms.TextBox();
             this.inputData = new System.Windows.Forms.TextBox();
             this.Name = new System.Windows.Forms.Label();
@@ -46,6 +47,8 @@
             this.sendButton = new System.Windows.Forms.Button();
             this.clearbutton = new System.Windows.Forms.Button();
             this.requester = new System.ComponentModel.BackgroundWorker();
+            this.regexbox = new System.Windows.Forms.TextBox();
+            this.regexbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // inputName
@@ -149,7 +152,7 @@
             this.logrtb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logrtb.Location = new System.Drawing.Point(634, 112);
             this.logrtb.Name = "logrtb";
-            this.logrtb.Size = new System.Drawing.Size(440, 342);
+            this.logrtb.Size = new System.Drawing.Size(440, 315);
             this.logrtb.TabIndex = 9;
             this.logrtb.Text = "Logs";
             // 
@@ -233,11 +236,33 @@
             this.requester.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.requester_ProgressChanged);
             this.requester.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.requester_RunWorkerCompleted);
             // 
+            // regexbox
+            // 
+            this.regexbox.Enabled = false;
+            this.regexbox.Font = new System.Drawing.Font("Calibri", 14.25F);
+            this.regexbox.Location = new System.Drawing.Point(634, 433);
+            this.regexbox.Name = "regexbox";
+            this.regexbox.Size = new System.Drawing.Size(360, 31);
+            this.regexbox.TabIndex = 17;
+            // 
+            // regexbutton
+            // 
+            this.regexbutton.Enabled = false;
+            this.regexbutton.Location = new System.Drawing.Point(1000, 438);
+            this.regexbutton.Name = "regexbutton";
+            this.regexbutton.Size = new System.Drawing.Size(75, 23);
+            this.regexbutton.TabIndex = 18;
+            this.regexbutton.Text = "Run regex";
+            this.regexbutton.UseVisualStyleBackColor = true;
+            this.regexbutton.Click += new System.EventHandler(this.regexbutton_Click);
+            // 
             // mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1086, 466);
+            this.Controls.Add(this.regexbutton);
+            this.Controls.Add(this.regexbox);
             this.Controls.Add(this.clearbutton);
             this.Controls.Add(this.sendButton);
             this.Controls.Add(this.pb);
@@ -255,9 +280,10 @@
             this.Controls.Add(this.Name);
             this.Controls.Add(this.inputData);
             this.Controls.Add(this.inputName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1102, 505);
             this.MinimumSize = new System.Drawing.Size(1102, 505);
-//this.Name = "mainform";
+            //this.Name = "mainform";
             this.Text = "Form Simulator from Cistoner";
             this.Load += new System.EventHandler(this.main_Load);
             this.ResumeLayout(false);
@@ -285,6 +311,8 @@
         private System.Windows.Forms.Button sendButton;
         private System.Windows.Forms.Button clearbutton;
         private System.ComponentModel.BackgroundWorker requester;
+        private System.Windows.Forms.TextBox regexbox;
+        private System.Windows.Forms.Button regexbutton;
     }
 }
 
