@@ -9,9 +9,29 @@ Features
 - [x] Send QUERY PARAMETERS with request
 - [x] View raw output of the request
 - [x] Run Regular Expression test on ouput and view matches in seperate form
-- [ ] View Request header
-- [ ] View Response header
+- [x] View Request header
+- [x] View Response header
 - [ ] Set cookies
+- 
+Headers looks like
+````c#
+==========REQUEST HEADER==========
+Content-Type: application/x-www-form-urlencoded
+Host: cistoner.org
+Content-Length: 7
+Expect: 100-continue
+==========RESPONSE HEADER==========
+Pragma: no-cache
+Vary: Accept-Encoding
+Access-Control-Allow-Origin: *
+Transfer-Encoding: chunked
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Content-Type: text/html
+Date: Thu, 29 May 2014 15:35:22 GMT
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Set-Cookie: PHPSESSID=*************************; path=/
+Server: Apache
+````
 
 How to use
 ============
