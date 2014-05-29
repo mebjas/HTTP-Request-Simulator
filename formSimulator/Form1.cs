@@ -18,6 +18,8 @@ namespace formSimulator
         private string data;
         private bool isGet = true;
         private string tempfile = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +@"/formsimulatortemp.txt";
+        private static string responseHeader = string.Empty;
+        private static string requestHeader = string.Empty;
         public static string regexcase;
         public mainform()
         {
@@ -52,6 +54,8 @@ namespace formSimulator
         private void log(string str)
         {
             logrtb.Text += Environment.NewLine + str;
+            logrtb.SelectionStart = logrtb.Text.Length;
+            logrtb.ScrollToCaret();
         }
 
         private void sendButton_Click(object sender, EventArgs e)
@@ -116,7 +120,7 @@ namespace formSimulator
                 webRequest.Method = "POST";
                 webRequest.ContentType = "application/x-www-form-urlencoded";
                 webRequest.ContentLength = byteArray.Length;
-
+                
                 using (Stream webpageStream = webRequest.GetRequestStream())
                 {
                     webpageStream.Write(byteArray, 0, byteArray.Length);
@@ -128,7 +132,12 @@ namespace formSimulator
                     {
                         webpageContent = reader.ReadToEnd();
                     }
+
+                    //save request header and response header for current request
+                    requestHeader = webRequest.Headers.ToString();
+                    responseHeader = webResponse.Headers.ToString();
                 }
+                
             }
             catch (Exception ex)
             {
@@ -165,6 +174,10 @@ namespace formSimulator
         private void requester_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             response.Text = data;
+            log("==========REQUEST HEADER==========");
+            log(requestHeader);
+            log("==========RESPONSE HEADER==========");
+            log(responseHeader);
             pb.Value = 100;
             pb.Visible = false;
             pb.Value = 0;
