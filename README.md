@@ -12,6 +12,8 @@ Features
 - [x] View Request header
 - [x] View Response header
 - [ ] Set cookies
+
+
 - 
 Headers looks like
 ````c#
